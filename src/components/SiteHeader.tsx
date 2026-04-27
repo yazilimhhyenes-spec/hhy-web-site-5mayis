@@ -40,7 +40,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-[13px] uppercase tracking-[0.14em] text-white/75 hover:text-[var(--color-gold)] transition-colors font-bold"
+              className="text-[13px] uppercase tracking-[0.14em] text-white/75 hover:text-[var(--color-gold)] transition-colors font-medium"
               activeProps={{ className: "text-[var(--color-gold)]" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -77,7 +77,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="text-sm uppercase tracking-[0.14em] text-white/80 py-2 font-bold"
+                className="text-sm uppercase tracking-[0.14em] text-white/80 py-2"
                 activeProps={{ className: "text-[var(--color-gold)]" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
