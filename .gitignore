@@ -1,11 +1,17 @@
 node_modules/
 dist/
+dist-ssr/
 .output/
 .vinxi/
+.tanstack/
+.nitro/
 
 .env
 .env.*
 !.env.example
+.dev.vars
+
+.wrangler/
 
 .DS_Store
 *.log
