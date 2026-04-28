@@ -144,7 +144,7 @@ function HomePage() {
               { v: 10, suffix: "M+ m²", label: "Sustainable Farmland" },
               { v: 100, suffix: "k+", label: "Tons Annual Capacity" },
               { v: 50, suffix: "+", label: "Export Destinations" },
-              { v: 2, suffix: "", label: "Major Factories" },
+              { v: 3, suffix: "", label: "Major Factories" },
             ].map((m, i) => (
               <div key={i} className="bg-[var(--color-navy-deep)] p-8 md:p-10">
                 <div className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[var(--color-gold)]">
