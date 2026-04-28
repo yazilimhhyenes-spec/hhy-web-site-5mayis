@@ -104,8 +104,12 @@ function HomePage() {
               <br />
               Based in Türkiye
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-              Bridging the gap between your brand and customer. HHYGROUP is a global food producer operating in agriculture, chocolate manufacturing, and nut processing.
+            <p className="mt-8 text-lg md:text-xl text-white/75 max-w-3xl leading-relaxed">
+              Bridging the gap between your brand and your customers. HHYGROUP is a global food
+              producer specializing in agriculture, chocolate manufacturing, and nut processing —
+              delivering end-to-end private label solutions. From concept development and custom
+              formulations to scalable production and packaging, we empower brands to create
+              high-quality chocolate, protein bars, and nut products tailored to their market.
             </p>
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Link
