@@ -4,10 +4,9 @@ import hhyLogo from "@/assets/hhy-logo-w.png";
 
 const NAV = [
   { to: "/", label: "Home" },
-  { to: "/what-we-do", label: "What We Do" },
   { to: "/our-brands", label: "Our Brands" },
-  { to: "/facilities", label: "About Us" },
-  { to: "/insights", label: "Blog" },
+  { to: "/about-us", label: "About Us" },
+  { to: "/private-label", label: "Private Label" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 

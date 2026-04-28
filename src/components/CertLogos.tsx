@@ -18,13 +18,11 @@ export const CertLogos = {
       <text x="100" y="65" fontFamily="Arial, sans-serif" fontSize="12" fontWeight="bold" fill="#666" textAnchor="middle" letterSpacing="2">QUALITY MANAGEMENT</text>
     </svg>
   ),
-  FDA: () => (
+  HACCP: () => (
     <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <g transform="translate(30, 20) scale(0.6)">
-        <path d="M40 60 V20 H90 V30 H55 V35 H85 V45 H55 V60 Z" fill="#003595" />
-        <path d="M100 60 V20 H130 C150 20 150 60 130 60 Z M115 35 V45 H125 C135 45 135 35 125 35 Z" fill="#003595" />
-        <path d="M165 20 L185 60 H170 L165 45 H145 L140 60 H125 L145 20 Z M150 35 L160 35 L155 25 Z" fill="#003595" />
-      </g>
+      <rect x="22" y="14" width="156" height="52" rx="8" fill="none" stroke="#007A33" strokeWidth="4" />
+      <text x="100" y="45" fontFamily="Arial, sans-serif" fontSize="34" fontWeight="900" fill="#007A33" textAnchor="middle" letterSpacing="1">HACCP</text>
+      <text x="100" y="58" fontFamily="Arial, sans-serif" fontSize="10" fontWeight="bold" fill="#666" textAnchor="middle" letterSpacing="2">FOOD SAFETY</text>
     </svg>
   ),
   Halal: () => (

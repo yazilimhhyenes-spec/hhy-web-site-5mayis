@@ -6,7 +6,6 @@ import hhyGroupBuildingImg from "@/assets/hhy-group-building.png";
 import agriAreasImg from "@/assets/agricultural-areas.webp";
 import harvestImg from "@/assets/process-harvest.jpg";
 import chocFactoryImg from "@/assets/chocolate-factory-ender-chocolate.png";
-import processingImg from "@/assets/process-processing.jpg";
 import nutProcessingImg from "@/assets/nut-processing.png";
 import packagingImg from "@/assets/process-packaging.jpg";
 import exportImg from "@/assets/process-export.jpg";
@@ -14,15 +13,11 @@ import productsImg from "@/assets/products-detail.jpg";
 import videoThumb from "@/assets/video-thumb-image.png";
 import hhyVideo from "@/assets/Videos/eng-altyazili-hhy-group-tanitim-videosu.mp4";
 import bannerVideo from "@/assets/Videos/banner-video-hhy-group-uzun.mp4";
-import waterFactoryImg from "@/assets/water-factory.png";
-import waterBottlingImg from "@/assets/water-factory-hhy-group.jpg";
-import enderLogo from "@/assets/Logos/ender-chocolate.svg";
-import snackBantLogo from "@/assets/Logos/snack-bant-logo.avif";
-import kayihanLogo from "@/assets/Logos/YILDIZ SU-01.png";
-import munchLogo from "@/assets/Logos/MUNCH MASTER_LOGO-01.png";
-import dedemLogo from "@/assets/Logos/dedem-kuruyemis-logo.png";
-import santinoLogo from "@/assets/Logos/SANTINO_LOGO-01.png";
-import indigoLogo from "@/assets/Logos/INDIGO_LOGO-01.png";
+import callebautLogo from "@/assets/Logos/callebaut-chocolate-oem-private-label.png";
+import tarimKrediLogo from "@/assets/Logos/tarim-kredi-logo.png";
+import carrefourLogo from "@/assets/Logos/carrefour-logo.svg";
+import migrosLogo from "@/assets/Logos/migros-logo.svg";
+import patiswissLogo from "@/assets/Logos/patiswiss-logo.webp";
 import { Counter } from "@/components/Counter";
 
 export const Route = createFileRoute("/")({
@@ -48,20 +43,27 @@ export const Route = createFileRoute("/")({
 
 const SERVICES = [
   { step: "01", title: "Sustainable Agricultural Operations", desc: "Managing over 10 million square meters of fertile farmland across Manisa and Ankara. We cultivate premium walnuts, almonds, and vineyards using advanced, eco-friendly farming technologies.", img: agriAreasImg },
-  { step: "02", title: "Chocolate & Confectionery Production", desc: "Operating a massive BRC and FDA-certified manufacturing complex. Our high-capacity lines produce premium filled chocolates, couverture, and wafers tailored for global industrial buyers.", img: chocFactoryImg },
+  { step: "02", title: "Chocolate & Confectionery Production", desc: "Operating a massive BRC and HACCP-certified manufacturing complex. Our high-capacity lines produce premium filled chocolates, couverture, and wafers tailored for global industrial buyers.", img: chocFactoryImg },
   { step: "03", title: "Industrial Nut Processing", desc: "Our 10,000 m² specialized facility manages high-volume roasting, seasoning, and packaging. We process premium almonds, cashews, and peanuts under strict international food safety regimes.", img: nutProcessingImg },
-  { step: "04", title: "Natural Spring Water Bottling", desc: "Sourced directly from the pristine reserves of Afyonkarahisar İhsaniye. Our fully automated, zero-touch facility delivers mineral-rich premium spring water for global distribution.", img: waterBottlingImg },
 ];
 
 const CERTS = [
   { name: "BRC v9", Logo: CertLogos.BRC },
   { name: "ISO 22000", Logo: CertLogos.ISO22000 },
   { name: "ISO 9001", Logo: CertLogos.ISO9001 },
-  { name: "FDA", Logo: CertLogos.FDA },
+  { name: "HACCP", Logo: CertLogos.HACCP },
   { name: "Halal", Logo: CertLogos.Halal },
   { name: "Kosher", Logo: CertLogos.Kosher },
   { name: "IFS Food", Logo: CertLogos.IFS },
   { name: "SEDEX", Logo: CertLogos.SEDEX }
+];
+
+const PARTNERS = [
+  { name: "Callebaut", logo: callebautLogo },
+  { name: "Tarim Kredi", logo: tarimKrediLogo },
+  { name: "Carrefour", logo: carrefourLogo },
+  { name: "Migros", logo: migrosLogo },
+  { name: "Patiswiss", logo: patiswissLogo },
 ];
 
 function HomePage() {
@@ -107,7 +109,7 @@ function HomePage() {
             </p>
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Link
-                to="/facilities"
+                to="/about-us"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-gold)] text-[var(--color-navy-deep)] text-[12px] uppercase tracking-[0.18em] font-bold hover:bg-white transition-colors"
               >
                 Visit Our Facilities →
@@ -138,7 +140,7 @@ function HomePage() {
               { v: 10, suffix: "M+ m²", label: "Sustainable Farmland" },
               { v: 100, suffix: "k+", label: "Tons Annual Capacity" },
               { v: 50, suffix: "+", label: "Export Destinations" },
-              { v: 3, suffix: "", label: "Major Factories" },
+              { v: 2, suffix: "", label: "Major Factories" },
             ].map((m, i) => (
               <div key={i} className="bg-[var(--color-navy-deep)] p-8 md:p-10">
                 <div className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[var(--color-gold)]">
@@ -254,6 +256,64 @@ function HomePage() {
         </div>
       </section>
 
+      {/* OUR BRANDS */}
+      <section className="bg-white">
+        <div className="container-screen py-20 md:py-32">
+          <div className="grid grid-cols-12 gap-8 mb-16">
+            <div className="col-span-12 md:col-span-4">
+              <span className="rule-gold mb-6" />
+              <div className="eyebrow mt-6">Partners</div>
+            </div>
+            <div className="col-span-12 md:col-span-8">
+              <h2 className="font-display text-3xl md:text-5xl tracking-tight leading-[1.05] text-[var(--color-navy-deep)]">
+                Companies working with us.
+                <br />
+                <span className="text-[var(--color-anthracite)]/55">Long-term production partners.</span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="overflow-hidden bg-white">
+            <div className="flex w-fit animate-marquee pause-marquee-row">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex shrink-0">
+                  {PARTNERS.map((brand) => (
+                    <div
+                      key={`${brand.name}-${i}`}
+                      className="w-[180px] md:w-[240px] p-8 md:p-12 flex items-center justify-center hover:bg-[var(--color-bone)] transition-all duration-300 group/item"
+                    >
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-h-16 md:max-h-20 w-auto transition-transform duration-500 group-hover/item:scale-110"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="flex w-fit animate-marquee-reverse pause-marquee-row">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex shrink-0">
+                  {PARTNERS.map((brand) => (
+                    <div
+                      key={`${brand.name}-reverse-${i}`}
+                      className="w-[180px] md:w-[240px] p-8 md:p-12 flex items-center justify-center hover:bg-[var(--color-bone)] transition-all duration-300 group/item"
+                    >
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-h-16 md:max-h-20 w-auto transition-transform duration-500 group-hover/item:scale-110"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="bg-[var(--color-navy-deep)] text-white">
         <div className="container-screen py-20 md:py-32">
@@ -296,54 +356,6 @@ function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OUR BRANDS */}
-      <section className="bg-white">
-        <div className="container-screen py-20 md:py-32">
-          <div className="grid grid-cols-12 gap-8 mb-16">
-            <div className="col-span-12 md:col-span-4">
-              <span className="rule-gold mb-6" />
-              <div className="eyebrow mt-6">Our Brands</div>
-            </div>
-            <div className="col-span-12 md:col-span-8">
-              <h2 className="font-display text-3xl md:text-5xl tracking-tight leading-[1.05] text-[var(--color-navy-deep)]">
-                Trusted by consumers.
-                <br />
-                <span className="text-[var(--color-anthracite)]/55">Proven market presence.</span>
-              </h2>
-            </div>
-          </div>
-
-          <div className="overflow-hidden pause-marquee group/marquee border-y border-[var(--color-anthracite)]/10 bg-white">
-            <div className="flex w-fit animate-marquee">
-              {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex shrink-0">
-                  {[
-                    { name: "Munch Master", logo: munchLogo },
-                    { name: "Santino", logo: santinoLogo },
-                    { name: "SN4CK", logo: snackBantLogo },
-                    { name: "Indigo", logo: indigoLogo },
-                    { name: "Kayihan Yildiz", logo: kayihanLogo },
-                    { name: "Ender Chocolate", logo: enderLogo },
-                    { name: "Dedem Kuruyemis", logo: dedemLogo },
-                  ].map((brand) => (
-                    <div
-                      key={`${brand.name}-${i}`}
-                      className="w-[180px] md:w-[240px] p-8 md:p-12 flex items-center justify-center border-r border-[var(--color-anthracite)]/10 hover:bg-[var(--color-bone)] transition-all duration-300 group/item"
-                    >
-                      <img
-                        src={brand.logo}
-                        alt={brand.name}
-                        className="max-h-16 md:max-h-20 w-auto transition-transform duration-500 group-hover/item:scale-110"
-                      />
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -407,16 +419,18 @@ function HomePage() {
                 <br />
                 Our Production Power.
               </h2>
-              <p className="mt-8 text-white/70 leading-relaxed max-w-xl text-lg">
-                From recipe formulation to palletized shipment — we manufacture for retailers,
-                distributors and confectionery brands across four continents under strict NDA.
+              <p className="mt-8 text-white/70 leading-relaxed max-w-3xl text-lg">
+                HHY Group manufactures private label and OEM snack products for retailers,
+                distributors, and confectionery brands — including protein bars, wafers,
+                chocolate bars, filled chocolates, chocolate-coated products, roasted nuts, raw nuts,
+                coated nuts, sauced nuts, and mixed nut formulations with export-ready documentation.
               </p>
 
               <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/15 border border-white/15">
                 {[
-                  { n: "01", t: "Concept Development", d: "Recipe, sourcing, and specification engineering with our R&D team." },
-                  { n: "02", t: "Industrial Production", d: "Dedicated runs on certified lines with full QA traceability." },
-                  { n: "03", t: "Global Logistics", d: "Direct container loading, customs handling, and FOB or DAP delivery." },
+                  { n: "01", t: "Product Development", d: "Recipe, ingredient sourcing, nutritional targets, and specification engineering with our R&D team." },
+                  { n: "02", t: "Bars, Wafers & Chocolate", d: "Private label protein bars, wafers, chocolate bars, filled chocolates, and chocolate-coated product manufacturing." },
+                  { n: "03", t: "Nuts & Export Supply", d: "Raw, roasted, coated, sauced, and mixed nut products prepared with traceability and export documentation." },
                 ].map((s) => (
                   <div key={s.n} className="bg-[var(--color-anthracite)] p-6">
                     <div className="font-mono text-[var(--color-gold)] text-sm">{s.n}</div>

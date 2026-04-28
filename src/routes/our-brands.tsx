@@ -1,10 +1,10 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import enderLogo from "@/assets/Logos/ender-chocolate.svg";
-import kayihanLogo from "@/assets/Logos/YILDIZ SU-01.png";
 import munchLogo from "@/assets/Logos/MUNCH MASTER_LOGO-01.png";
 import dedemLogo from "@/assets/Logos/dedem-kuruyemis-logo.png";
-import santinoLogo from "@/assets/Logos/SANTINO_LOGO-01.png";
-import indigoLogo from "@/assets/Logos/INDIGO_LOGO-01.png";
+import snackBantLogo from "@/assets/Logos/snack-bant-logo.avif";
+import cerezshopLogo from "@/assets/Logos/cerezshop-logo.avif";
+import hhyAgroLogo from "@/assets/Logos/hhy-agro-.png";
 
 export const Route = createFileRoute("/our-brands")({
   head: () => ({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/our-brands")({
       {
         name: "description",
         content:
-          "Discover HHY Group consumer brands across chocolate, confectionery, nuts, snacks, and natural spring water.",
+          "Discover HHY Group consumer brands across chocolate, confectionery, nuts, and snack bars.",
       },
       { property: "og:title", content: "Our Brands — HHY Group" },
       {
@@ -27,32 +27,11 @@ export const Route = createFileRoute("/our-brands")({
 
 const BRANDS = [
   {
-    name: "Indigo",
-    category: "Chocolate & Confectionery",
-    logo: indigoLogo,
-    description:
-      "A modern chocolate brand created for shelves that need a premium look, accessible taste, and reliable repeat purchase performance.",
-  },
-  {
-    name: "Santino",
-    category: "Chocolate & Confectionery",
-    logo: santinoLogo,
-    description:
-      "A refined confectionery line focused on rich chocolate experiences, elegant packaging, and products suitable for both local and export markets.",
-  },
-  {
     name: "Ender Chocolate",
     category: "Chocolate Manufacturing",
     logo: enderLogo,
     description:
       "HHY Group's chocolate specialist brand, backed by high-capacity production lines and a portfolio spanning bars, filled chocolates, and wafers.",
-  },
-  {
-    name: "Kayihan Su",
-    category: "Natural Spring Water",
-    logo: kayihanLogo,
-    description:
-      "A natural spring water brand sourced from Afyonkarahisar, designed around clean taste, dependable bottling standards, and everyday consumption.",
   },
   {
     name: "Dedem Kuruyemis",
@@ -67,6 +46,27 @@ const BRANDS = [
     logo: munchLogo,
     description:
       "A snack-focused chocolate bar brand made for impulse channels, practical formats, and energetic flavor profiles for daily consumption.",
+  },
+  {
+    name: "SN4CK",
+    category: "Protein Bars & Snack Products",
+    logo: snackBantLogo,
+    description:
+      "A US-focused HHY Group snack brand developed for protein bars, snack bars, nut-based products, and practical on-the-go formats for modern retail channels.",
+  },
+  {
+    name: "Cerezshop",
+    category: "Nuts, Freeze-Dried Fruits & Snacks",
+    logo: cerezshopLogo,
+    description:
+      "A consumer snack brand focused on nuts, freeze-dried fruits, chocolate-coated nut products, dried fruit selections, and practical everyday snack formats.",
+  },
+  {
+    name: "HHY Agro",
+    category: "Agricultural Operations",
+    logo: hhyAgroLogo,
+    description:
+      "HHY Group's agricultural brand connected to Manisa Kula and Ankara Kalecik operations, supporting high-volume walnut supply, almonds, seedless grapes, and traceable farm-to-factory raw materials.",
   },
 ];
 
@@ -84,9 +84,9 @@ function OurBrandsPage() {
           </h1>
           <p className="mt-8 text-white/70 max-w-3xl text-lg leading-relaxed">
             HHY Group brings together consumer-facing brands across chocolate,
-            snack bars, nuts, dried fruits, and natural spring water. Each brand
-            is supported by our production capability, quality standards, and
-            market experience.
+            snack bars, nuts, dried fruits, and agricultural raw materials. Each
+            brand is supported by our production capability, quality standards,
+            and market experience.
           </p>
         </div>
       </section>
@@ -103,7 +103,7 @@ function OurBrandsPage() {
                   </div>
                 </div>
 
-                <div className="mt-10 h-28 flex items-center justify-center border border-[var(--color-anthracite)]/10 bg-[var(--color-bone)]/35 p-8">
+                <div className="mt-10 h-28 flex items-center justify-center bg-[var(--color-bone)]/35 p-8">
                   <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" className="max-h-16 max-w-full object-contain" />
                 </div>
 

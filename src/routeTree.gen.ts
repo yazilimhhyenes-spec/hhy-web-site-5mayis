@@ -9,20 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WhatWeDoRouteImport } from './routes/what-we-do'
 import { Route as PrivateLabelRouteImport } from './routes/private-label'
 import { Route as OurBrandsRouteImport } from './routes/our-brands'
 import { Route as InsightsRouteImport } from './routes/insights'
-import { Route as FacilitiesRouteImport } from './routes/facilities'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InsightsArticleIdRouteImport } from './routes/insights/$articleId'
 
-const WhatWeDoRoute = WhatWeDoRouteImport.update({
-  id: '/what-we-do',
-  path: '/what-we-do',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivateLabelRoute = PrivateLabelRouteImport.update({
   id: '/private-label',
   path: '/private-label',
@@ -38,14 +32,14 @@ const InsightsRoute = InsightsRouteImport.update({
   path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FacilitiesRoute = FacilitiesRouteImport.update({
-  id: '/facilities',
-  path: '/facilities',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -61,87 +55,73 @@ const InsightsArticleIdRoute = InsightsArticleIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
-  '/facilities': typeof FacilitiesRoute
   '/insights': typeof InsightsRouteWithChildren
   '/our-brands': typeof OurBrandsRoute
   '/private-label': typeof PrivateLabelRoute
-  '/what-we-do': typeof WhatWeDoRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
-  '/facilities': typeof FacilitiesRoute
   '/insights': typeof InsightsRouteWithChildren
   '/our-brands': typeof OurBrandsRoute
   '/private-label': typeof PrivateLabelRoute
-  '/what-we-do': typeof WhatWeDoRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
-  '/facilities': typeof FacilitiesRoute
   '/insights': typeof InsightsRouteWithChildren
   '/our-brands': typeof OurBrandsRoute
   '/private-label': typeof PrivateLabelRoute
-  '/what-we-do': typeof WhatWeDoRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about-us'
     | '/contact'
-    | '/facilities'
     | '/insights'
     | '/our-brands'
     | '/private-label'
-    | '/what-we-do'
     | '/insights/$articleId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about-us'
     | '/contact'
-    | '/facilities'
     | '/insights'
     | '/our-brands'
     | '/private-label'
-    | '/what-we-do'
     | '/insights/$articleId'
   id:
     | '__root__'
     | '/'
+    | '/about-us'
     | '/contact'
-    | '/facilities'
     | '/insights'
     | '/our-brands'
     | '/private-label'
-    | '/what-we-do'
     | '/insights/$articleId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
   ContactRoute: typeof ContactRoute
-  FacilitiesRoute: typeof FacilitiesRoute
   InsightsRoute: typeof InsightsRouteWithChildren
   OurBrandsRoute: typeof OurBrandsRoute
   PrivateLabelRoute: typeof PrivateLabelRoute
-  WhatWeDoRoute: typeof WhatWeDoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/what-we-do': {
-      id: '/what-we-do'
-      path: '/what-we-do'
-      fullPath: '/what-we-do'
-      preLoaderRoute: typeof WhatWeDoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/private-label': {
       id: '/private-label'
       path: '/private-label'
@@ -163,18 +143,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/facilities': {
-      id: '/facilities'
-      path: '/facilities'
-      fullPath: '/facilities'
-      preLoaderRoute: typeof FacilitiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -208,12 +188,11 @@ const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
   ContactRoute: ContactRoute,
-  FacilitiesRoute: FacilitiesRoute,
   InsightsRoute: InsightsRouteWithChildren,
   OurBrandsRoute: OurBrandsRoute,
   PrivateLabelRoute: PrivateLabelRoute,
-  WhatWeDoRoute: WhatWeDoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

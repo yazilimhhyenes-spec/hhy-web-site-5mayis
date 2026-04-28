@@ -29,9 +29,8 @@ export function SiteFooter() {
             <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">Company</div>
             <ul className="space-y-3 text-sm">
               <li><Link to="/" className="hover:text-[var(--color-gold)]">Home</Link></li>
-              <li><Link to="/what-we-do" className="hover:text-[var(--color-gold)]">What We Do</Link></li>
               <li><Link to="/our-brands" className="hover:text-[var(--color-gold)]">Our Brands</Link></li>
-              <li><Link to="/facilities" className="hover:text-[var(--color-gold)]">About Us</Link></li>
+              <li><Link to="/about-us" className="hover:text-[var(--color-gold)]">About Us</Link></li>
               <li><Link to="/insights" className="hover:text-[var(--color-gold)]">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-[var(--color-gold)]">Contact Us</Link></li>
             </ul>
@@ -49,7 +48,7 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">Standards</div>
             <div className="grid grid-cols-3 gap-2">
-              {["BRC", "ISO 22000", "FDA", "Halal", "Kosher", "IFS"].map((c) => (
+              {["BRC", "ISO 22000", "HACCP", "Halal", "Kosher", "IFS"].map((c) => (
                 <div
                   key={c}
                   className="border border-white/15 text-[10px] uppercase tracking-[0.14em] text-white/70 px-2 py-2 text-center"
