@@ -15,6 +15,7 @@ import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OurBrandsBrandSlugRouteImport } from './routes/our-brands.$brandSlug'
 import { Route as InsightsArticleIdRouteImport } from './routes/insights/$articleId'
 
 const PrivateLabelRoute = PrivateLabelRouteImport.update({
@@ -47,6 +48,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurBrandsBrandSlugRoute = OurBrandsBrandSlugRouteImport.update({
+  id: '/$brandSlug',
+  path: '/$brandSlug',
+  getParentRoute: () => OurBrandsRoute,
+} as any)
 const InsightsArticleIdRoute = InsightsArticleIdRouteImport.update({
   id: '/$articleId',
   path: '/$articleId',
@@ -58,18 +64,20 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRouteWithChildren
-  '/our-brands': typeof OurBrandsRoute
+  '/our-brands': typeof OurBrandsRouteWithChildren
   '/private-label': typeof PrivateLabelRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
+  '/our-brands/$brandSlug': typeof OurBrandsBrandSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRouteWithChildren
-  '/our-brands': typeof OurBrandsRoute
+  '/our-brands': typeof OurBrandsRouteWithChildren
   '/private-label': typeof PrivateLabelRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
+  '/our-brands/$brandSlug': typeof OurBrandsBrandSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +85,10 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/insights': typeof InsightsRouteWithChildren
-  '/our-brands': typeof OurBrandsRoute
+  '/our-brands': typeof OurBrandsRouteWithChildren
   '/private-label': typeof PrivateLabelRoute
   '/insights/$articleId': typeof InsightsArticleIdRoute
+  '/our-brands/$brandSlug': typeof OurBrandsBrandSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/our-brands'
     | '/private-label'
     | '/insights/$articleId'
+    | '/our-brands/$brandSlug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/our-brands'
     | '/private-label'
     | '/insights/$articleId'
+    | '/our-brands/$brandSlug'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/our-brands'
     | '/private-label'
     | '/insights/$articleId'
+    | '/our-brands/$brandSlug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,7 +128,7 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   ContactRoute: typeof ContactRoute
   InsightsRoute: typeof InsightsRouteWithChildren
-  OurBrandsRoute: typeof OurBrandsRoute
+  OurBrandsRoute: typeof OurBrandsRouteWithChildren
   PrivateLabelRoute: typeof PrivateLabelRoute
 }
 
@@ -164,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-brands/$brandSlug': {
+      id: '/our-brands/$brandSlug'
+      path: '/$brandSlug'
+      fullPath: '/our-brands/$brandSlug'
+      preLoaderRoute: typeof OurBrandsBrandSlugRouteImport
+      parentRoute: typeof OurBrandsRoute
+    }
     '/insights/$articleId': {
       id: '/insights/$articleId'
       path: '/$articleId'
@@ -186,12 +205,24 @@ const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
   InsightsRouteChildren,
 )
 
+interface OurBrandsRouteChildren {
+  OurBrandsBrandSlugRoute: typeof OurBrandsBrandSlugRoute
+}
+
+const OurBrandsRouteChildren: OurBrandsRouteChildren = {
+  OurBrandsBrandSlugRoute: OurBrandsBrandSlugRoute,
+}
+
+const OurBrandsRouteWithChildren = OurBrandsRoute._addFileChildren(
+  OurBrandsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   ContactRoute: ContactRoute,
   InsightsRoute: InsightsRouteWithChildren,
-  OurBrandsRoute: OurBrandsRoute,
+  OurBrandsRoute: OurBrandsRouteWithChildren,
   PrivateLabelRoute: PrivateLabelRoute,
 }
 export const routeTree = rootRouteImport

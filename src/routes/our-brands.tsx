@@ -1,10 +1,5 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
-import enderLogo from "@/assets/Logos/ender-chocolate.svg";
-import munchLogo from "@/assets/Logos/MUNCH MASTER_LOGO-01.png";
-import dedemLogo from "@/assets/Logos/dedem-kuruyemis-logo.png";
-import snackBantLogo from "@/assets/Logos/snack-bant-logo.avif";
-import cerezshopLogo from "@/assets/Logos/cerezshop-logo.avif";
-import hhyAgroLogo from "@/assets/Logos/hhy-agro-.png";
+import { Link, Outlet, createFileRoute, useRouterState } from "@tanstack/react-router";
+import { BRANDS } from "@/data/brands";
 
 export const Route = createFileRoute("/our-brands")({
   head: () => ({
@@ -25,52 +20,13 @@ export const Route = createFileRoute("/our-brands")({
   component: OurBrandsPage,
 });
 
-const BRANDS = [
-  {
-    name: "Ender Chocolate",
-    category: "Chocolate Manufacturing",
-    logo: enderLogo,
-    description:
-      "HHY Group's chocolate specialist brand, backed by high-capacity production lines and a portfolio spanning bars, filled chocolates, and wafers.",
-  },
-  {
-    name: "Dedem Kuruyemis",
-    category: "Nuts & Dried Fruits",
-    logo: dedemLogo,
-    description:
-      "A nuts and dried fruits brand built on roasting, seasoning, and packaging expertise for consumers who value freshness and familiar flavors.",
-  },
-  {
-    name: "Munch Bar",
-    category: "Chocolate Snack Bars",
-    logo: munchLogo,
-    description:
-      "A snack-focused chocolate bar brand made for impulse channels, practical formats, and energetic flavor profiles for daily consumption.",
-  },
-  {
-    name: "SN4CK",
-    category: "Protein Bars & Snack Products",
-    logo: snackBantLogo,
-    description:
-      "A US-focused HHY Group snack brand developed for protein bars, snack bars, nut-based products, and practical on-the-go formats for modern retail channels.",
-  },
-  {
-    name: "Cerezshop",
-    category: "Nuts, Freeze-Dried Fruits & Snacks",
-    logo: cerezshopLogo,
-    description:
-      "A consumer snack brand focused on nuts, freeze-dried fruits, chocolate-coated nut products, dried fruit selections, and practical everyday snack formats.",
-  },
-  {
-    name: "HHY Agro",
-    category: "Agricultural Operations",
-    logo: hhyAgroLogo,
-    description:
-      "HHY Group's agricultural brand connected to Manisa Kula and Ankara Kalecik operations, supporting high-volume walnut supply, almonds, seedless grapes, and traceable farm-to-factory raw materials.",
-  },
-];
-
 function OurBrandsPage() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+
+  if (pathname !== "/our-brands") {
+    return <Outlet />;
+  }
+
   return (
     <>
       <section className="bg-[var(--color-navy-deep)] text-white pt-32 pb-20 md:pt-44 md:pb-28">
@@ -95,7 +51,12 @@ function OurBrandsPage() {
         <div className="container-screen">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-[var(--color-anthracite)]/15 border border-[var(--color-anthracite)]/15">
             {BRANDS.map((brand, i) => (
-              <article key={brand.name} className="bg-white p-8 md:p-10 flex flex-col min-h-[360px]">
+              <Link
+                key={brand.name}
+                to="/our-brands/$brandSlug"
+                params={{ brandSlug: brand.slug }}
+                className="bg-white p-8 md:p-10 flex flex-col min-h-[360px] group hover:bg-[var(--color-navy-deep)] hover:text-white transition-colors"
+              >
                 <div className="flex items-start justify-between gap-6">
                   <div className="font-mono text-[var(--color-gold-muted)] text-sm">0{i + 1}</div>
                   <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[var(--color-anthracite)]/45 text-right">
@@ -107,13 +68,16 @@ function OurBrandsPage() {
                   <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" className="max-h-16 max-w-full object-contain" />
                 </div>
 
-                <h2 className="font-display text-3xl mt-8 tracking-tight text-[var(--color-navy-deep)]">
+                <h2 className="font-display text-3xl mt-8 tracking-tight text-[var(--color-navy-deep)] group-hover:text-white transition-colors">
                   {brand.name}
                 </h2>
-                <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-anthracite)]/75">
+                <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-anthracite)]/75 group-hover:text-white/70 transition-colors">
                   {brand.description}
                 </p>
-              </article>
+                <span className="mt-auto pt-8 text-[11px] uppercase tracking-[0.16em] font-bold text-[var(--color-gold-muted)] group-hover:text-[var(--color-gold)]">
+                  View Brand →
+                </span>
+              </Link>
             ))}
           </div>
 
