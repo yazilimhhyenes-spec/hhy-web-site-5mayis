@@ -6,19 +6,19 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-[var(--color-hhy-surface)] px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <div className="text-8xl font-bold gradient-text mb-4">404</div>
+        <h2 className="mt-4 text-xl font-semibold text-[var(--color-hhy-charcoal)]">Page not found</h2>
+        <p className="mt-3 text-sm text-[var(--color-hhy-muted-text)]">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--color-hhy-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-hhy-dark)] transition-all hover:shadow-[0_4px_16px_rgba(1,208,145,0.3)]"
           >
-            Go home
+            Go Home
           </Link>
         </div>
       </div>
@@ -31,24 +31,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HHY Group — High-Capacity Food Production Company" },
-      { name: "description", content: "HHYGROUP is a global food producer operating in agriculture, chocolate manufacturing, and nut processing. Managing extensive farmland and advanced production facilities in Türkiye." },
+      { title: "HHY Group — Global Private Label Food Manufacturer" },
+      { name: "description", content: "HHY Group is a vertically integrated food manufacturer based in Türkiye, specializing in private label chocolate, nuts, protein bars, and snack production for global B2B partners." },
       { name: "author", content: "HHY Group" },
+      { name: "keywords", content: "private label food manufacturer, contract manufacturing food, chocolate manufacturer, protein bar manufacturer, nut supplier, OEM food production" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "HHY Group" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "HHY Group — High-Capacity Food Production Company" },
-      { name: "twitter:title", content: "HHY Group — High-Capacity Food Production Company" },
-      { property: "og:description", content: "HHYGROUP is a global food producer operating in agriculture, chocolate manufacturing, and nut processing. Managing extensive farmland and advanced production facilities in Türkiye." },
-      { name: "twitter:description", content: "HHYGROUP is a global food producer operating in agriculture, chocolate manufacturing, and nut processing. Managing extensive farmland and advanced production facilities in Türkiye." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/050b8e0a-98fa-44b6-a3b9-24f688fc0b76/id-preview-ac2fe7f5--dd823701-6b25-4850-aa08-275838acc6e0.lovable.app-1776757120006.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/050b8e0a-98fa-44b6-a3b9-24f688fc0b76/id-preview-ac2fe7f5--dd823701-6b25-4850-aa08-275838acc6e0.lovable.app-1776757120006.png" },
+      { property: "og:title", content: "HHY Group — Global Private Label Food Manufacturer" },
+      { name: "twitter:title", content: "HHY Group — Global Private Label Food Manufacturer" },
+      { property: "og:description", content: "Vertically integrated food manufacturer — agriculture, chocolate, nuts, protein bars. Private label & OEM solutions for global B2B partners." },
+      { name: "twitter:description", content: "Vertically integrated food manufacturer — agriculture, chocolate, nuts, protein bars. Private label & OEM solutions for global B2B partners." },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,

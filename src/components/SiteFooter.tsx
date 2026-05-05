@@ -1,70 +1,122 @@
 import { Link } from "@tanstack/react-router";
 import hhyLogo from "@/assets/hhy-logo-w.png";
+import { BRANDS } from "@/data/brands";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--color-navy-deep)] text-white/70">
-      <div className="container-screen py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-          <div className="md:col-span-5">
+    <footer className="bg-[var(--color-hhy-dark)] text-white/70">
+      {/* Main footer content */}
+      <div className="container-screen pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+          {/* Company info */}
+          <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <img src={hhyLogo} alt="HHY Group Logo" className="h-12 w-auto object-contain" />
+              <img src={hhyLogo} alt="HHY Group Logo" className="h-10 w-auto object-contain" />
             </div>
-            <p className="text-sm leading-relaxed max-w-md text-white/60">
-              Global food producer operating in agriculture, chocolate manufacturing,
-              and nut processing — managing extensive farmland and advanced production facilities in Türkiye.
+            <p className="text-sm leading-relaxed text-white/50 max-w-sm">
+              Global food production group specializing in agriculture, chocolate manufacturing,
+              nut processing, and private label solutions — headquartered in Türkiye, exporting to 50+ countries.
             </p>
-            <div className="mt-8 pt-8 border-t border-white/10">
-              <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-3">Headquarters</div>
-              <address className="not-italic text-sm leading-relaxed text-white/75">
-                HHY Group A.Ş.<br />
-                106. Cadde no:24<br />
-                Saray Mah. Kahramankazan / Ankara · Türkiye<br />
-                <span className="text-white/50">+90 539 231 12 71 · merhaba@hhygroup.com</span>
-              </address>
-            </div>
-          </div>
 
-          <div className="md:col-span-2">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">Company</div>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="hover:text-[var(--color-gold)]">Home</Link></li>
-              <li><Link to="/our-brands" className="hover:text-[var(--color-gold)]">Our Brands</Link></li>
-              <li><Link to="/about-us" className="hover:text-[var(--color-gold)]">About Us</Link></li>
-              <li><Link to="/insights" className="hover:text-[var(--color-gold)]">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-[var(--color-gold)]">Contact Us</Link></li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">Trade</div>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/contact" className="hover:text-[var(--color-gold)]">Become a Partner</Link></li>
-              <li><Link to="/contact" className="hover:text-[var(--color-gold)]">Request Specifications</Link></li>
-              <li><Link to="/contact" className="hover:text-[var(--color-gold)]">Visit Our Facilities</Link></li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-3">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mb-4">Standards</div>
-            <div className="grid grid-cols-3 gap-2">
-              {["BRC", "ISO 22000", "HACCP", "Halal", "Kosher", "IFS"].map((c) => (
-                <div
-                  key={c}
-                  className="border border-white/15 text-[10px] uppercase tracking-[0.14em] text-white/70 px-2 py-2 text-center"
+            {/* Social links */}
+            <div className="flex gap-3 mt-6">
+              {[
+                { name: "LinkedIn", href: "#", icon: "M4.98 3.5C4.98 4.882 3.87 6 2.5 6S.02 4.882.02 3.5C.02 2.12 1.13 1 2.5 1S4.98 2.12 4.98 3.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z" },
+                { name: "Instagram", href: "#", icon: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
+              ].map(s => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.name}
+                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-[var(--color-hhy-accent)] hover:bg-[var(--color-hhy-accent)]/10 transition-all duration-300 group"
                 >
-                  {c}
-                </div>
+                  <svg className="w-4 h-4 text-white/40 group-hover:text-[var(--color-hhy-accent)] transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={s.icon} />
+                  </svg>
+                </a>
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-[11px] uppercase tracking-[0.14em] text-white/40">
-          <div>© {new Date().getFullYear()} HHY Group A.Ş. — All rights reserved.</div>
-          <div className="flex gap-6">
-            <span>VAT TR-0000000000</span>
-            <span>Global Food Producer</span>
+          {/* Navigation */}
+          <div className="md:col-span-2">
+            <div className="text-[11px] uppercase tracking-[0.15em] text-white/30 font-semibold mb-5">Company</div>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/" className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">Home</Link></li>
+              <li><Link to="/our-brands" className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">Our Brands</Link></li>
+              <li><Link to="/about-us" className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">About Us</Link></li>
+              <li><Link to="/private-label" className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">Private Label</Link></li>
+              <li><Link to="/contact" className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Brands */}
+          <div className="md:col-span-3">
+            <div className="text-[11px] uppercase tracking-[0.15em] text-white/30 font-semibold mb-5">Our Brands</div>
+            <ul className="space-y-3 text-sm">
+              {BRANDS.map(brand => (
+                <li key={brand.slug}>
+                  <Link
+                    to="/our-brands/$brandSlug"
+                    params={{ brandSlug: brand.slug }}
+                    className="text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors"
+                  >
+                    {brand.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <div className="text-[11px] uppercase tracking-[0.15em] text-white/30 font-semibold mb-5">Contact</div>
+            <address className="not-italic text-sm leading-relaxed text-white/55">
+              HHY Group A.Ş.<br />
+              106. Cadde no:24<br />
+              Saray Mah. Kahramankazan<br />
+              Ankara · Türkiye
+            </address>
+            <div className="mt-5 space-y-2">
+              <a href="mailto:export@hhygroup.com" className="block text-sm text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">
+                export@hhygroup.com
+              </a>
+              <a href="tel:+905392311271" className="block text-sm text-white/55 hover:text-[var(--color-hhy-accent)] transition-colors">
+                +90 539 231 12 71
+              </a>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-white/8">
+              <div className="text-[10px] uppercase tracking-[0.15em] text-white/25 mb-3">Certifications</div>
+              <div className="flex flex-wrap gap-1.5">
+                {["BRC", "ISO 22000", "HACCP", "Halal", "Kosher", "IFS", "FDA", "SEDEX"].map((c) => (
+                  <span
+                    key={c}
+                    className="border border-white/10 text-[9px] uppercase tracking-[0.1em] text-white/40 px-2 py-1 rounded-md"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/6">
+        <div className="container-screen py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-[11px] text-white/30">
+            © {new Date().getFullYear()} HHY Group A.Ş. · All rights reserved.
+          </div>
+          <div className="flex items-center gap-6 text-[11px] text-white/25">
+            <span className="flex items-center gap-2">
+              <span className="pulse-dot" style={{ width: 6, height: 6 }} />
+              Global Food Producer
+            </span>
+            <span>Ankara, Türkiye</span>
           </div>
         </div>
       </div>

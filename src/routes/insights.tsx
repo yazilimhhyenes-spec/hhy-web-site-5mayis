@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -6,7 +7,6 @@ export const Route = createFileRoute("/insights")({
       { title: "Insights — HHY Group" },
       { name: "description", content: "Market reports, harvest calendars and export intelligence from our trade desk." },
       { property: "og:title", content: "Insights — HHY Group" },
-      { property: "og:description", content: "Market intelligence from the source." },
     ],
   }),
   component: InsightsPage,
@@ -22,41 +22,54 @@ const ARTICLES = [
 ];
 
 function InsightsPage() {
+  const containerRef = useScrollReveal();
+
   return (
-    <>
-      <section className="bg-[var(--color-navy-deep)] text-white pt-32 pb-20 md:pt-44 md:pb-28">
+    <div ref={containerRef}>
+      <section className="bg-[var(--color-hhy-dark)] text-white pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-screen">
-          <span className="rule-gold mb-6" />
-          <div className="eyebrow mt-6">Insights</div>
-          <h1 className="font-display text-5xl md:text-7xl mt-6 tracking-tight leading-[0.98] max-w-4xl">
-            Market intelligence
-            <br />
-            <span className="text-white/55">from the source.</span>
-          </h1>
+          <div className="max-w-3xl fade-in-up">
+            <span className="eyebrow">Insights</span>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl mt-4 tracking-tight leading-[1.05]">
+              Market intelligence
+              <br />
+              <span className="text-white/40">from the source.</span>
+            </h1>
+            <p className="mt-5 text-white/50 max-w-xl text-base">
+              Quarterly harvest forecasts, export-grade pricing analysis, and regulatory briefings — written by our trade desk for procurement professionals.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-[var(--color-bone)] py-20 md:py-28">
-        <div className="container-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-anthracite)]/15 border border-[var(--color-anthracite)]/15">
-          {ARTICLES.map((a) => (
-            <Link
-              key={a.slug}
-              to="/insights/$articleId"
-              params={{ articleId: a.slug }}
-              className="bg-white p-8 md:p-10 group cursor-pointer hover:bg-[var(--color-navy-deep)] hover:text-white transition-colors flex flex-col"
-            >
-              <div className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-gold-muted)] group-hover:text-[var(--color-gold)]">
-                {a.tag}
-              </div>
-              <h2 className="font-display text-xl mt-6 tracking-tight leading-snug">{a.title}</h2>
-              <div className="mt-auto pt-12 border-t border-[var(--color-anthracite)]/15 group-hover:border-white/20 flex justify-between items-center text-[11px] uppercase tracking-[0.16em] text-[var(--color-anthracite)]/50 group-hover:text-white/55">
-                <span>{a.date}</span>
-                <span>{a.read} read</span>
-              </div>
-            </Link>
-          ))}
+      <section className="bg-[var(--color-hhy-surface)] section-padding">
+        <div className="container-screen">
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {ARTICLES.map((a) => (
+              <Link
+                key={a.slug}
+                to="/insights/$articleId"
+                params={{ articleId: a.slug }}
+                className="group bg-white rounded-2xl border border-[var(--color-hhy-border)] p-6 md:p-8 flex flex-col hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-[var(--color-hhy-accent)]/20 transition-all duration-400"
+              >
+                <span className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[var(--color-hhy-accent)]">
+                  {a.tag}
+                </span>
+                <h2 className="font-display text-lg mt-4 tracking-tight leading-snug text-[var(--color-hhy-charcoal)] group-hover:text-[var(--color-hhy-accent)] transition-colors">
+                  {a.title}
+                </h2>
+                <div className="mt-auto pt-8 border-t border-[var(--color-hhy-border)] flex justify-between items-center text-[11px] text-[var(--color-hhy-muted-text)]">
+                  <span>{a.date}</span>
+                  <span className="flex items-center gap-1">
+                    {a.read} read
+                    <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

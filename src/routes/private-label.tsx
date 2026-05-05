@@ -1,30 +1,96 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { CertLogos } from "@/components/CertLogos";
-import callebautLogo from "@/assets/Logos/callebaut-chocolate-oem-private-label.png";
-import tarimKrediLogo from "@/assets/Logos/tarim-kredi-logo.png";
-import carrefourLogo from "@/assets/Logos/carrefour-logo.svg";
-import migrosLogo from "@/assets/Logos/migros-logo.svg";
-import patiswissLogo from "@/assets/Logos/patiswiss-logo.webp";
+import productsImg from "@/assets/products-detail.jpg";
+import chocImg from "@/assets/chocolate-production-oem-private-label.webp";
+import nutImg from "@/assets/nut-processing.png";
+import factoryImg from "@/assets/ender-chocolate-factory.webp";
+import packagingImg from "@/assets/process-packaging.jpg";
+import callebautLogo from "@/assets/Logos/partners/callebaut-chocolate-oem-private-label.png";
+import tarimKrediLogo from "@/assets/Logos/partners/tarim-kredi-logo.png";
+import carrefourLogo from "@/assets/Logos/partners/carrefour-logo.svg";
+import migrosLogo from "@/assets/Logos/partners/migros-logo.jpg";
+import lidlLogo from "@/assets/Logos/partners/lidl-logo.webp";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Route = createFileRoute("/private-label")({
   head: () => ({
     meta: [
-      { title: "Private Label & OEM — HHY Group" },
-      { name: "description", content: "End-to-end private label manufacturing for retailers, distributors, and confectionery brands worldwide." },
-      { property: "og:title", content: "Your Brand. Our Production Power." },
-      { property: "og:description", content: "Industrial OEM partnerships under NDA." },
+      { title: "Private Label & OEM Food Manufacturing — HHY Group" },
+      { name: "description", content: "End-to-end private label food manufacturing: chocolate, nuts, protein bars, snack products. BRC, ISO, HACCP certified. From concept to shelf-ready delivery." },
+      { property: "og:title", content: "Private Label & OEM — HHY Group" },
+      { property: "og:description", content: "Your brand. Our production infrastructure. End-to-end OEM food manufacturing." },
     ],
   }),
   component: PrivateLabelPage,
 });
 
 const STEPS = [
-  { n: "01", t: "Brief & NDA", d: "Initial scoping call, mutual NDA, and product brief intake by our R&D team." },
-  { n: "02", t: "Recipe Development", d: "Sample formulation, sensory panel iteration, and shelf-life validation." },
-  { n: "03", t: "Pilot Run", d: "Pre-production batch on the target line with full quality documentation." },
-  { n: "04", t: "Industrial Production", d: "Scaled production with HACCP control and dedicated batch traceability." },
-  { n: "05", t: "Packaging & Artwork", d: "In-house design support or your supplied artwork integrated to line specs." },
-  { n: "06", t: "Logistics & Delivery", d: "Export-ready shipment planning, customs documentation, and delivery coordination for international orders." },
+  { 
+    n: "01", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ), 
+    t: "Brief & NDA", 
+    d: "Initial scoping, mutual NDA, product brief intake. We understand your market, target audience, and product vision." 
+  },
+  { 
+    n: "02", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.022.547l-2.387 2.387a2 2 0 000 2.828l.596.596a2 2 0 002.828 0l2.387-2.387a2 2 0 00.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 00.517-3.86L9.428 6.05a2 2 0 01.547-1.022l2.387-2.387a2 2 0 012.828 0l.596.596a2 2 0 010 2.828l-2.387 2.387a2 2 0 01-1.022.547l-2.387.477a6 6 0 01-3.86-.517l-.318-.158a6 6 0 00-3.86-.517L6.05 9.428a2 2 0 01-.547 1.022l-2.387 2.387" />
+      </svg>
+    ), 
+    t: "Recipe Development", 
+    d: "Sample formulation, sensory panel iteration, nutritional profiling, and shelf-life validation by our R&D team." 
+  },
+  { 
+    n: "03", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>
+    ), 
+    t: "Pilot Run", 
+    d: "Pre-production batch on the target line with full quality documentation, compliance checks, and spec finalization." 
+  },
+  { 
+    n: "04", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ), 
+    t: "Industrial Production", 
+    d: "Scaled production with HACCP control, batch traceability, and dedicated line allocation for your product." 
+  },
+  { 
+    n: "05", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      </svg>
+    ), 
+    t: "Packaging & Artwork", 
+    d: "In-house design support or your supplied artwork integrated to line specifications. Retail-ready formats." 
+  },
+  { 
+    n: "06", 
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 012 2v.654M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ), 
+    t: "Logistics & Delivery", 
+    d: "Export documentation, customs coordination, and shipment planning for international orders." 
+  },
+];
+
+const CATEGORIES = [
+  { title: "Chocolate & Confectionery", desc: "Bars, filled chocolates, coated wafers, compound products, seasonal ranges.", img: chocImg, items: ["Chocolate bars", "Filled chocolates", "Coated wafers", "Compound products"] },
+  { title: "Nuts & Dried Fruits", desc: "Raw, roasted, seasoned, coated, sauced, and mixed nut formulations.", img: nutImg, items: ["Roasted nuts", "Seasoned blends", "Coated snacks", "Mixed formulations"] },
+  { title: "Protein & Snack Bars", desc: "Protein bars, nut-based snacks, functional formats for modern retail.", img: factoryImg, items: ["Protein bars", "Snack bars", "Nut-based bars", "Functional formats"] },
 ];
 
 const CERTS = [
@@ -38,132 +104,151 @@ const CERTS = [
   { name: "SEDEX", Logo: CertLogos.SEDEX },
 ];
 
-const PARTNERS = [
-  { name: "Callebaut", logo: callebautLogo },
-  { name: "Tarim Kredi", logo: tarimKrediLogo },
-  { name: "Carrefour", logo: carrefourLogo },
-  { name: "Migros", logo: migrosLogo },
-  { name: "Patiswiss", logo: patiswissLogo },
-];
 
-const PARTNER_ROWS = Array.from({ length: 4 }, (_, rowIndex) =>
-  Array.from({ length: 5 }, (_, columnIndex) => PARTNERS[(rowIndex * 2 + columnIndex) % PARTNERS.length]),
-);
 
 function PrivateLabelPage() {
-  return (
-    <>
-      <section className="bg-[var(--color-anthracite)] text-white pt-32 pb-20 md:pt-44 md:pb-28">
-        <div className="container-screen">
-          <span className="rule-gold mb-6" />
-          <div className="eyebrow mt-6">Private Label · OEM</div>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] mt-6 tracking-tight leading-[0.95] max-w-5xl">
-            Your Brand.
-            <br />
-            Our Production Power.
-          </h1>
-          <p className="mt-8 text-white/70 max-w-3xl text-lg leading-relaxed">
-            HHY Group provides private label and OEM food manufacturing for retailers,
-            distributors, and confectionery brands. Our production capabilities cover
-            protein bars, wafers, chocolate bars, filled chocolates, chocolate-coated products,
-            roasted nuts, raw nuts, coated nuts, sauced nuts, mixed nut formulations,
-            and export-ready snack products — all produced on dedicated lines under
-            strict NDA, HACCP-controlled processes, and full batch traceability.
-          </p>
-        </div>
-      </section>
+  const containerRef = useScrollReveal();
 
-      <section className="bg-[var(--color-bone)] py-20 md:py-28">
-        <div className="container-screen">
-          <h2 className="font-display text-3xl md:text-5xl tracking-tight max-w-3xl">A six-stage production partnership.</h2>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-anthracite)]/15 border border-[var(--color-anthracite)]/15">
-            {STEPS.map((s) => (
-              <div key={s.n} className="bg-white p-8 md:p-10">
-                <div className="font-mono text-[var(--color-gold-muted)] text-sm">{s.n}</div>
-                <h3 className="font-display text-xl mt-4 tracking-tight">{s.t}</h3>
-                <p className="mt-4 text-[15px] text-[var(--color-anthracite)]/75 leading-relaxed">{s.d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-16">
-            <Link to="/contact" className="inline-flex px-8 py-4 bg-[var(--color-navy-deep)] text-white text-[12px] uppercase tracking-[0.18em] font-bold hover:bg-[var(--color-gold)] hover:text-[var(--color-navy-deep)] transition-colors">
-              Start Private Label Project →
+  return (
+    <div ref={containerRef}>
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={productsImg} alt="" aria-hidden className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-hhy-dark)]/85 via-[var(--color-hhy-dark)]/75 to-[var(--color-hhy-dark)]/95" />
+        </div>
+        <div className="container-screen relative z-10">
+          <div className="max-w-3xl fade-in-up">
+            <span className="eyebrow">Private Label & OEM Manufacturing</span>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl mt-4 tracking-tight leading-[1.05] text-white">
+              Your Brand.
+              <br />
+              <span className="gradient-text">Our Production Power.</span>
+            </h1>
+            <p className="mt-6 text-white/60 max-w-2xl text-base md:text-lg leading-relaxed">
+              HHY Group provides end-to-end private label food manufacturing for retailers, distributors, and brands worldwide — covering chocolate, nuts, protein bars, and snack products with full NDA protection and batch traceability.
+            </p>
+            <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-[var(--color-hhy-accent)] text-[var(--color-hhy-dark)] text-sm font-bold rounded-full hover:shadow-[0_4px_20px_rgba(1,208,145,0.35)] transition-all">
+              Start Your Project
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      {/* Process Steps */}
+      <section className="bg-[var(--color-hhy-accent)]/5 section-padding border-y border-[var(--color-hhy-accent)]/10">
         <div className="container-screen">
-          <div className="grid grid-cols-12 gap-8 mb-14">
-            <div className="col-span-12 md:col-span-4">
-              <span className="rule-gold mb-6" />
-              <div className="eyebrow mt-6">Partners</div>
-            </div>
-            <div className="col-span-12 md:col-span-8">
-              <h2 className="font-display text-3xl md:text-5xl tracking-tight leading-[1.05] text-[var(--color-navy-deep)]">
-                Companies working with us.
-                <br />
-                <span className="text-[var(--color-anthracite)]/55">Long-term production partners.</span>
-              </h2>
-            </div>
+          <div className="reveal max-w-2xl mb-14">
+            <span className="eyebrow">The Process</span>
+            <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
+              A six-stage production partnership.
+            </h2>
+            <p className="mt-4 text-[var(--color-hhy-muted-text)] leading-relaxed">
+              From initial brief to global delivery — every step is managed with transparency, quality control, and your brand specifications in mind.
+            </p>
           </div>
 
-          <div className="bg-white">
-            {PARTNER_ROWS.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="grid grid-cols-2 md:grid-cols-5"
-              >
-                {row.map((brand, brandIndex) => (
-                  <div
-                    key={`${brand.name}-${rowIndex}-${brandIndex}`}
-                    className="h-32 md:h-40 p-8 flex items-center justify-center hover:bg-[var(--color-bone)] transition-colors"
-                  >
-                    <img src={brand.logo} alt={brand.name} loading="lazy" className="max-h-16 md:max-h-20 max-w-full object-contain" />
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {STEPS.map((s) => (
+              <div key={s.n} className="group p-6 md:p-8 rounded-2xl border border-[var(--color-hhy-border)] hover:border-[var(--color-hhy-accent)]/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] bg-white transition-all duration-400">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--color-hhy-accent)]/10 flex items-center justify-center text-lg group-hover:bg-[var(--color-hhy-accent)]/20 transition-colors">
+                    {s.icon}
                   </div>
-                ))}
+                  <span className="text-[10px] font-mono text-[var(--color-hhy-accent)] tracking-wider font-bold">{s.n}</span>
+                </div>
+                <h3 className="font-display text-lg font-bold text-[var(--color-hhy-charcoal)]">{s.t}</h3>
+                <p className="mt-3 text-sm text-[var(--color-hhy-muted-text)] leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[var(--color-bone)]">
-        <div className="container-screen py-20 md:py-28">
-          <div className="grid grid-cols-12 gap-8 mb-12">
-            <div className="col-span-12 md:col-span-5">
-              <span className="rule-gold mb-6" />
-              <div className="eyebrow mt-6">Global Standards & Certifications</div>
-              <h2 className="font-display text-3xl md:text-5xl tracking-tight leading-[1.05] mt-6">
-                Audited.
-                <br />
-                <span className="text-[var(--color-anthracite)]/60">Verified. Repeatable.</span>
-              </h2>
-            </div>
-            <div className="col-span-12 md:col-span-7 md:pt-12">
-              <p className="text-[var(--color-anthracite)]/75 leading-relaxed max-w-xl">
-                Every production line operates under continuously audited quality and food-safety
-                regimes recognized by the world's largest retailers and importers. Certificates
-                are issued, controlled, and re-audited annually by accredited third parties.
-              </p>
-            </div>
+      {/* Product Categories */}
+      <section className="bg-[var(--color-hhy-surface)] section-padding">
+        <div className="container-screen">
+          <div className="reveal text-center max-w-2xl mx-auto mb-14">
+            <span className="eyebrow">Product Categories</span>
+            <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
+              What we manufacture.
+            </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {CERTS.map((c) => (
-              <div
-                key={c.name}
-                className="bg-white border border-[var(--color-anthracite)]/10 p-4 md:p-6 flex flex-col items-center justify-center aspect-[4/3] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-[var(--color-gold)] transition-all duration-300 group rounded-sm"
-              >
-                <div className="w-full h-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 max-h-16 md:max-h-20 flex items-center justify-center">
-                  <c.Logo />
+          <div className="reveal space-y-6">
+            {CATEGORIES.map((cat, i) => (
+              <div key={cat.title} className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-[var(--color-hhy-border)] bg-white hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-shadow duration-500">
+                <div className={`relative aspect-[16/10] lg:aspect-auto lg:min-h-[320px] overflow-hidden ${i % 2 ? "lg:order-2" : ""}`}>
+                  <img src={cat.img} alt={cat.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-hhy-dark)]/40 to-transparent" />
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <span className="text-xs font-mono text-[var(--color-hhy-accent)] tracking-wider font-bold">0{i + 1}</span>
+                  <h3 className="font-display text-2xl md:text-3xl tracking-tight mt-2 text-[var(--color-hhy-charcoal)]">{cat.title}</h3>
+                  <p className="mt-3 text-[var(--color-hhy-muted-text)] leading-relaxed">{cat.desc}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {cat.items.map(item => (
+                      <span key={item} className="px-3 py-1.5 text-xs font-medium rounded-full bg-[var(--color-hhy-accent)]/8 text-[var(--color-hhy-accent)] border border-[var(--color-hhy-accent)]/15">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* Certifications */}
+      <section className="bg-white section-padding">
+        <div className="container-screen">
+          <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="eyebrow">Quality & Compliance</span>
+              <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
+                Uncompromising Quality.
+                <br />
+                <span className="text-[var(--color-hhy-muted-text)]">Global Safety Standards.</span>
+              </h2>
+              <p className="mt-4 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
+                Every production line operates under continuously audited quality and food-safety regimes recognized by the world's largest retailers and importers.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {CERTS.map((c) => (
+                <div key={c.name} className="p-4 rounded-xl bg-[var(--color-hhy-surface)] border border-[var(--color-hhy-border)] flex flex-col items-center justify-center aspect-square hover:border-[var(--color-hhy-accent)]/30 hover:scale-105 hover:shadow-[0_0_25px_rgba(1,208,145,0.2)] transition-all duration-400 group">
+                  <div className="w-full h-full max-h-12 flex items-center justify-center">
+                    <c.Logo />
+                  </div>
+                  <span className="text-[9px] uppercase tracking-wider text-[var(--color-hhy-muted-text)] mt-2 font-medium">{c.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* CTA */}
+      <section className="bg-[var(--color-hhy-dark)] text-white section-padding">
+        <div className="container-screen text-center max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-5xl tracking-tight">
+            Ready to build your
+            <br />
+            <span className="gradient-text">product line?</span>
+          </h2>
+          <p className="mt-4 text-white/50 max-w-xl mx-auto">
+            Contact our private label team to discuss your product concept, target volumes, and timeline.
+          </p>
+          <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-8 py-4 bg-[var(--color-hhy-accent)] text-[var(--color-hhy-dark)] text-sm font-bold rounded-full hover:shadow-[0_4px_20px_rgba(1,208,145,0.35)] transition-all">
+            Start Private Label Project
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

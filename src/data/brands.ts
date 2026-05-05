@@ -1,9 +1,8 @@
-import enderLogo from "@/assets/Logos/ender-chocolate.svg";
-import munchLogo from "@/assets/Logos/MUNCH MASTER_LOGO-01.png";
-import dedemLogo from "@/assets/Logos/dedem-kuruyemis-logo.png";
-import snackBantLogo from "@/assets/Logos/snack-bant-logo.avif";
-import cerezshopLogo from "@/assets/Logos/cerezshop-logo.avif";
-import hhyAgroLogo from "@/assets/Logos/hhy-agro-.png";
+import enderLogo from "@/assets/Logos/Our-brands/ender-chocolate.svg";
+import dedemLogo from "@/assets/Logos/Our-brands/dedem-kuruyemis-logo.png";
+import snackBantLogo from "@/assets/Logos/Our-brands/snack-bant-logo.avif";
+import cerezshopLogo from "@/assets/Logos/Our-brands/cerezshop-logo.avif";
+import hhyAgroLogo from "@/assets/Logos/Our-brands/hhy-agro-.png";
 import chocolateBanner from "@/assets/chocolate-production-oem-private-label.webp";
 import factoryBanner from "@/assets/ender-chocolate-factory.webp";
 import productsBanner from "@/assets/products-detail.jpg";
@@ -47,24 +46,7 @@ export const BRANDS = [
     ],
     capabilities: ["Roasted nuts", "Seasoned nuts", "Dried fruits", "Retail packs"],
   },
-  {
-    slug: "munch-bar",
-    name: "Munch Bar",
-    category: "Chocolate Snack Bars",
-    logo: munchLogo,
-    banner: productsBanner,
-    headline: "A snack bar brand designed for fast-moving retail and impulse channels.",
-    description:
-      "Munch Bar is HHY Group's chocolate snack bar brand for private label bar production, OEM snack bars, wafer bars, filled chocolate bars, coated products, and impulse retail channels.",
-    about:
-      "Munch Bar is a snack bar brand developed for practical, everyday consumption across impulse, convenience, supermarket, and distributor channels. Backed by HHY Group's confectionery and bar production capability, the brand is aligned with private label snack bar manufacturing, OEM chocolate bar production, wafer bar development, and fast-moving retail product formats.",
-    content: [
-      "Munch Bar focuses on chocolate snack formats that are easy to position across convenience stores, supermarkets, vending channels, and export distributors. The brand is designed around practical portioning, strong shelf appeal, accessible flavor profiles, and repeatable production for high-volume retail environments.",
-      "For private label and OEM customers, Munch Bar reflects HHY Group's capability in chocolate bar production, coated snack products, wafer-based bars, filled bar formats, and everyday confectionery items. It can support customers looking to build a new snack bar range or expand an existing retail portfolio with customized recipes and packaging.",
-      "The brand's production direction is suitable for markets that need affordable chocolate bars, impulse snack bars, promotional pack formats, and export-ready confectionery lines. Product concepts can be tailored by flavor, coating, filling, bar size, packaging type, and target retail channel.",
-    ],
-    capabilities: ["Chocolate bars", "Snack bars", "Wafer formats", "Impulse retail"],
-  },
+
   {
     slug: "sn4ck",
     name: "SN4CK",
