@@ -328,11 +328,14 @@ function HomePage() {
             <div>
               <span className="eyebrow">Agricultural Foundation</span>
               <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
-                Managed Agricultural Assets.
+                Large-Scale
                 <br />
-                <span className="text-[var(--color-hhy-muted-text)]">Integrated Supply Chain.</span>
+                <span className="text-[var(--color-hhy-muted-text)]">Agricultural Infrastructure.</span>
               </h2>
-              <p className="mt-5 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
+              <p className="mt-5 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg italic font-medium">
+                10 million m² of strategically managed farmland powering a fully integrated supply network.
+              </p>
+              <p className="mt-4 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
                 HHY Group manages over 10 million square meters of agricultural land across Kula and Kalecik regions, growing walnuts, olives, almonds, and seedless grapes. This vertical integration from farm to factory ensures traceable raw materials and consistent supply for all production lines.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
