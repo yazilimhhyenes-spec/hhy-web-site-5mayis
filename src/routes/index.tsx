@@ -50,55 +50,55 @@ const CAPABILITIES = [
 ];
 
 const PL_STEPS = [
-  { 
-    n: "01", 
+  {
+    n: "01",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
-    ), 
-    t: "Idea & Brief", 
-    d: "Product concept, target market, and initial specifications." 
+    ),
+    t: "Idea & Brief",
+    d: "Product concept, target market, and initial specifications."
   },
-  { 
-    n: "02", 
+  {
+    n: "02",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.022.547l-2.387 2.387a2 2 0 000 2.828l.596.596a2 2 0 002.828 0l2.387-2.387a2 2 0 00.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 00.517-3.86L9.428 6.05a2 2 0 01.547-1.022l2.387-2.387a2 2 0 012.828 0l.596.596a2 2 0 010 2.828l-2.387 2.387a2 2 0 01-1.022.547l-2.387.477a6 6 0 01-3.86-.517l-.318-.158a6 6 0 00-3.86-.517L6.05 9.428a2 2 0 01-.547 1.022l-2.387 2.387" />
       </svg>
-    ), 
-    t: "R&D Development", 
-    d: "Recipe formulation, sample iterations, shelf-life testing." 
+    ),
+    t: "R&D Development",
+    d: "Recipe formulation, sample iterations, shelf-life testing."
   },
-  { 
-    n: "03", 
+  {
+    n: "03",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
-    ), 
-    t: "Production", 
-    d: "Scaled manufacturing on dedicated, HACCP-controlled lines." 
+    ),
+    t: "Production",
+    d: "Scaled manufacturing on dedicated, HACCP-controlled lines."
   },
-  { 
-    n: "04", 
+  {
+    n: "04",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
-    ), 
-    t: "Packaging", 
-    d: "Custom artwork integration, retail-ready formats." 
+    ),
+    t: "Packaging",
+    d: "Custom artwork integration, retail-ready formats."
   },
-  { 
-    n: "05", 
+  {
+    n: "05",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 012 2v.654M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-    ), 
-    t: "Distribution", 
-    d: "Export documentation, logistics coordination, global delivery." 
+    ),
+    t: "Distribution",
+    d: "Export documentation, logistics coordination, global delivery."
   },
 ];
 
@@ -185,14 +185,14 @@ function HomePage() {
             <div className="lg:col-span-5 reveal">
               <span className="eyebrow">Who We Are</span>
               <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)] leading-tight">
-                Global production
-                <br />
-                <span className="text-[var(--color-hhy-muted-text)]">scale and expertise.</span>
+                Industrial Production Power.
+
+                <span className="text-[var(--color-hhy-muted-text)]">World-Class Precision.</span>
               </h2>
               <p className="mt-6 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
                 Since 1998, HHY Group has been building a vertically integrated ecosystem that spans from the soil to the shelf. Watch our corporate overview to see how we manage our agricultural assets and high-tech manufacturing facilities.
               </p>
-              
+
               <div className="mt-8 space-y-4">
                 {[
                   "Vertically integrated from farm to factory",
@@ -220,9 +220,9 @@ function HomePage() {
                 </div>
 
                 {isVideoPlaying && (
-                  <video 
-                    autoPlay 
-                    controls 
+                  <video
+                    autoPlay
+                    controls
                     className="absolute inset-0 w-full h-full object-cover"
                     onEnded={() => setIsVideoPlaying(false)}
                   >
@@ -245,8 +245,8 @@ function HomePage() {
 
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-6xl mx-auto">
             {PARTNERS.map((p) => (
-              <div 
-                key={p.name} 
+              <div
+                key={p.name}
                 className="reveal flex items-center justify-center w-[calc(50%-8px)] md:flex-1 md:min-w-[200px] p-6 md:p-10 bg-[var(--color-hhy-surface)] rounded-2xl md:rounded-3xl border border-[var(--color-hhy-border)] hover:border-[var(--color-hhy-accent)]/30 hover:shadow-[0_20px_50px_rgba(1,208,145,0.12)] hover:scale-[1.04] transition-all duration-500 group cursor-default"
               >
                 <img src={p.logo} alt={p.name} className={`max-h-10 md:max-h-16 w-auto object-contain transition-transform duration-500 ${p.scale || ""}`} />
@@ -279,26 +279,22 @@ function HomePage() {
                 <button
                   key={cap.title}
                   onClick={() => setActiveCap(i)}
-                  className={`w-full text-left p-6 md:p-8 rounded-2xl transition-all duration-400 group border ${
-                    activeCap === i
+                  className={`w-full text-left p-6 md:p-8 rounded-2xl transition-all duration-400 group border ${activeCap === i
                       ? "bg-white shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-transparent"
                       : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-white/20"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-5">
                     <div className="flex-1">
-                      <h3 className={`font-display text-lg md:text-xl font-bold transition-colors ${
-                        activeCap === i ? "text-[var(--color-hhy-charcoal)]" : "text-white/80"
-                      }`}>{cap.title}</h3>
+                      <h3 className={`font-display text-lg md:text-xl font-bold transition-colors ${activeCap === i ? "text-[var(--color-hhy-charcoal)]" : "text-white/80"
+                        }`}>{cap.title}</h3>
                       {activeCap === i && (
-                        <p className={`mt-3 text-sm leading-relaxed fade-in-up ${
-                          activeCap === i ? "text-[var(--color-hhy-muted-text)]" : "text-white/40"
-                        }`}>{cap.desc}</p>
+                        <p className={`mt-3 text-sm leading-relaxed fade-in-up ${activeCap === i ? "text-[var(--color-hhy-muted-text)]" : "text-white/40"
+                          }`}>{cap.desc}</p>
                       )}
                     </div>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                      activeCap === i ? "bg-[var(--color-hhy-accent)] text-white shadow-[0_0_20px_rgba(1,208,145,0.4)]" : "bg-white/10 text-white/40"
-                    }`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all ${activeCap === i ? "bg-[var(--color-hhy-accent)] text-white shadow-[0_0_20px_rgba(1,208,145,0.4)]" : "bg-white/10 text-white/40"
+                      }`}>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
                     </div>
                   </div>
@@ -335,9 +331,9 @@ function HomePage() {
             <div>
               <span className="eyebrow">Agricultural Foundation</span>
               <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
-                Rooted in the land.
+                Integrated Agricultural Excellence.
                 <br />
-                <span className="text-[var(--color-hhy-muted-text)]">Controlled from source.</span>
+                <span className="text-[var(--color-hhy-muted-text)]">Traceable from Source.</span>
               </h2>
               <p className="mt-5 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
                 HHY Group manages over 10 million square meters of agricultural land across Kula and Kalecik regions, growing walnuts, olives, almonds, and seedless grapes. This vertical integration from farm to factory ensures traceable raw materials and consistent supply for all production lines.
