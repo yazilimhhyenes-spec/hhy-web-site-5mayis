@@ -11,6 +11,24 @@ import agricultureBanner from "@/assets/agricultural-areas.webp";
 
 export const BRANDS = [
   {
+    slug: "hhy-agro",
+    name: "HHY Agro",
+    category: "Agricultural Operations",
+    logo: hhyAgroLogo,
+    banner: agricultureBanner,
+    headline: "Agricultural strength connected to traceable food production.",
+    description:
+      "HHY Agro is HHY Group's agricultural operations brand, supporting walnut, olive, almond, and seedless grape production with traceable raw material supply for food manufacturing and export.",
+    about:
+      "HHY Agro connects HHY Group's agricultural operations with its wider food production ecosystem. The brand supports large-scale farmland management, raw material planning, traceable agricultural supply, and farm-to-factory coordination for food manufacturing, nut processing, snack production, and export-oriented private label projects.",
+    content: [
+      "HHY Agro represents the agricultural foundation behind HHY Group's production ecosystem. Its operations support long-term supply security, agricultural raw material planning, and closer control between farmland, processing facilities, and finished food production.",
+      "The brand is connected to large-scale agricultural areas in Kula and Kalecik, with a focus on high-volume walnuts, olives, almonds, and seedless grapes. This agricultural base strengthens HHY Group's ability to support traceable nut supply, snack production, private label food manufacturing, and export-ready raw material programs.",
+      "For B2B customers, HHY Agro is important because private label and OEM food projects depend on stable sourcing, reliable quality, and predictable planning. By connecting agriculture with chocolate, snack, and nut processing operations, HHY Group can offer a stronger supply story from raw material to finished product.",
+    ],
+    capabilities: ["Walnuts", "Olives", "Almonds", "Seedless grapes"],
+  },
+  {
     slug: "ender-chocolate",
     name: "Ender Chocolate",
     category: "Chocolate Manufacturing",
@@ -28,25 +46,6 @@ export const BRANDS = [
     ],
     capabilities: ["Chocolate bars", "Filled chocolates", "Wafers", "Coated products"],
   },
-  {
-    slug: "dedem-kuruyemis",
-    name: "Dedem Kuruyemis",
-    category: "Nuts & Dried Fruits",
-    logo: dedemLogo,
-    banner: nutProcessingBanner,
-    headline: "Nuts and dried fruit expertise shaped for everyday consumer demand.",
-    description:
-      "Dedem Kuruyemis is HHY Group's nuts and dried fruits brand, supported by industrial nut processing, roasting, seasoning, packaging, private label snack production, and export-ready retail formats.",
-    about:
-      "Dedem Kuruyemis represents HHY Group's experience in nuts, dried fruits, roasting, seasoning, and consumer-ready snack packaging. The brand is positioned for retail shelves, wholesale channels, private label nut projects, and OEM snack production where consistent flavor, freshness, packaging quality, and reliable supply are essential.",
-    content: [
-      "Dedem Kuruyemis is built around high-demand snack categories such as raw nuts, roasted nuts, seasoned nuts, dried fruits, mixed nut packs, and coated snack products. It connects HHY Group's nut processing facility with retail packaging capability for customers that need shelf-ready products and repeatable supply.",
-      "For private label and OEM buyers, the brand demonstrates HHY Group's ability to manage nut processing from raw material preparation to roasting, seasoning, packaging, labeling, and export documentation. This makes Dedem Kuruyemis relevant for supermarket private label programs, distributor snack ranges, and regional retail brands looking for dependable nut and dried fruit manufacturing.",
-      "The product direction can be adapted for different market needs, including traditional roasted nut selections, flavored nut mixes, dried fruit combinations, chocolate-coated nut products, sauced nuts, and everyday snack formats. Each range can be developed with packaging specifications, portion sizes, and retail positioning in mind.",
-    ],
-    capabilities: ["Roasted nuts", "Seasoned nuts", "Dried fruits", "Retail packs"],
-  },
-
   {
     slug: "sn4ck",
     name: "SN4CK",
@@ -66,6 +65,24 @@ export const BRANDS = [
     capabilities: ["Protein bars", "Snack bars", "Nut-based snacks", "On-the-go formats"],
   },
   {
+    slug: "dedem-kuruyemis",
+    name: "Dedem Kuruyemis",
+    category: "Nuts & Dried Fruits",
+    logo: dedemLogo,
+    banner: nutProcessingBanner,
+    headline: "Nuts and dried fruit expertise shaped for everyday consumer demand.",
+    description:
+      "Dedem Kuruyemis is HHY Group's nuts and dried fruits brand, supported by industrial nut processing, roasting, seasoning, packaging, private label snack production, and export-ready retail formats.",
+    about:
+      "Dedem Kuruyemis represents HHY Group's experience in nuts, dried fruits, roasting, seasoning, and consumer-ready snack packaging. The brand is positioned for retail shelves, wholesale channels, private label nut projects, and OEM snack production where consistent flavor, freshness, packaging quality, and reliable supply are essential.",
+    content: [
+      "Dedem Kuruyemis is built around high-demand snack categories such as raw nuts, roasted nuts, seasoned nuts, dried fruits, mixed nut packs, and coated snack products. It connects HHY Group's nut processing facility with retail packaging capability for customers that need shelf-ready products and repeatable supply.",
+      "For private label and OEM buyers, the brand demonstrates HHY Group's ability to manage nut processing from raw material preparation to roasting, seasoning, packaging, labeling, and export documentation. This makes Dedem Kuruyemis relevant for supermarket private label programs, distributor snack ranges, and regional retail brands looking for dependable nut and dried fruit manufacturing.",
+      "The product direction can be adapted for different market needs, including traditional roasted nut selections, flavored nut mixes, dried fruit combinations, chocolate-coated nut products, sauced nuts, and everyday snack formats. Each range can be developed with packaging specifications, portion sizes, and retail positioning in mind.",
+    ],
+    capabilities: ["Roasted nuts", "Seasoned nuts", "Dried fruits", "Retail packs"],
+  },
+  {
     slug: "cerezshop",
     name: "Cerezshop",
     category: "Nuts, Freeze-Dried Fruits & Snacks",
@@ -82,24 +99,6 @@ export const BRANDS = [
       "Cerezshop can support product concepts around raw nuts, roasted nuts, premium dried fruit selections, freeze-dried fruit snacks, chocolate-coated nuts, mixed snack pouches, giftable packs, and everyday consumer formats. Product ranges can be adapted for local taste preferences, packaging formats, and export requirements.",
     ],
     capabilities: ["Nuts", "Freeze-dried fruits", "Dried fruits", "Coated snacks"],
-  },
-  {
-    slug: "hhy-agro",
-    name: "HHY Agro",
-    category: "Agricultural Operations",
-    logo: hhyAgroLogo,
-    banner: agricultureBanner,
-    headline: "Agricultural strength connected to traceable food production.",
-    description:
-      "HHY Agro is HHY Group's agricultural operations brand, supporting walnut, olive, almond, and seedless grape production with traceable raw material supply for food manufacturing and export.",
-    about:
-      "HHY Agro connects HHY Group's agricultural operations with its wider food production ecosystem. The brand supports large-scale farmland management, raw material planning, traceable agricultural supply, and farm-to-factory coordination for food manufacturing, nut processing, snack production, and export-oriented private label projects.",
-    content: [
-      "HHY Agro represents the agricultural foundation behind HHY Group's production ecosystem. Its operations support long-term supply security, agricultural raw material planning, and closer control between farmland, processing facilities, and finished food production.",
-      "The brand is connected to large-scale agricultural areas in Kula and Kalecik, with a focus on high-volume walnuts, olives, almonds, and seedless grapes. This agricultural base strengthens HHY Group's ability to support traceable nut supply, snack production, private label food manufacturing, and export-ready raw material programs.",
-      "For B2B customers, HHY Agro is important because private label and OEM food projects depend on stable sourcing, reliable quality, and predictable planning. By connecting agriculture with chocolate, snack, and nut processing operations, HHY Group can offer a stronger supply story from raw material to finished product.",
-    ],
-    capabilities: ["Walnuts", "Olives", "Almonds", "Seedless grapes"],
   },
 ];
 
