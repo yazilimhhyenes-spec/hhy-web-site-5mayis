@@ -126,8 +126,6 @@ function HomePage() {
 
         <div className="container-screen relative z-10 pt-20">
           <div className="max-w-3xl fade-in-up">
-
-
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-bold text-white">
               High-Capacity Food
               <br />
@@ -186,7 +184,6 @@ function HomePage() {
               <span className="eyebrow">Who We Are</span>
               <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)] leading-tight">
                 Industrial Production Power.
-
                 <span className="text-[var(--color-hhy-muted-text)]">World-Class Precision.</span>
               </h2>
               <p className="mt-6 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
@@ -280,8 +277,8 @@ function HomePage() {
                   key={cap.title}
                   onClick={() => setActiveCap(i)}
                   className={`w-full text-left p-6 md:p-8 rounded-2xl transition-all duration-400 group border ${activeCap === i
-                      ? "bg-white shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-transparent"
-                      : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-white/20"
+                    ? "bg-white shadow-[0_20px_40px_rgba(0,0,0,0.3)] border-transparent"
+                    : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-white/20"
                     }`}
                 >
                   <div className="flex items-start gap-5">
@@ -331,9 +328,9 @@ function HomePage() {
             <div>
               <span className="eyebrow">Agricultural Foundation</span>
               <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)]">
-                Integrated Agricultural Excellence.
+                Managed Agricultural Assets.
                 <br />
-                <span className="text-[var(--color-hhy-muted-text)]">Traceable from Source.</span>
+                <span className="text-[var(--color-hhy-muted-text)]">Integrated Supply Chain.</span>
               </h2>
               <p className="mt-5 text-[var(--color-hhy-muted-text)] leading-relaxed max-w-lg">
                 HHY Group manages over 10 million square meters of agricultural land across Kula and Kalecik regions, growing walnuts, olives, almonds, and seedless grapes. This vertical integration from farm to factory ensures traceable raw materials and consistent supply for all production lines.
@@ -396,7 +393,7 @@ function HomePage() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-mono text-[var(--color-hhy-accent)] tracking-wider">{s.n}</span>
+                      <span className="text-[10px] font-mono text-[var(--color-hhy-accent)] tracking-wider font-bold">{s.n}</span>
                       <h3 className="text-sm font-semibold text-white">{s.t}</h3>
                     </div>
                     <p className="text-xs text-white/40 mt-1 leading-relaxed">{s.d}</p>
