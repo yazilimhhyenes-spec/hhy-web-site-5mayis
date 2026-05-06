@@ -327,10 +327,10 @@ function HomePage() {
           <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="eyebrow">Agricultural Foundation</span>
-              <h2 className="font-display text-3xl md:text-5xl tracking-tight mt-4 text-[var(--color-hhy-charcoal)] leading-tight">
+              <h2 className="font-display text-4xl md:text-6xl tracking-tighter mt-4 text-[var(--color-hhy-charcoal)] leading-[1.1]">
                 Large-Scale Agricultural Infrastructure
                 <br />
-                <span className="text-xl md:text-3xl text-[var(--color-hhy-muted-text)]">
+                <span className="text-2xl md:text-4xl text-[var(--color-hhy-muted-text)]">
                   10 million m² of strategically managed farmland powering a fully integrated supply network.
                 </span>
               </h2>
