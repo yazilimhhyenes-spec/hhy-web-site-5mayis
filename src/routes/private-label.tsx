@@ -156,7 +156,7 @@ function PrivateLabelPage() {
                   <div className="w-10 h-10 rounded-full bg-[var(--color-hhy-accent)]/10 flex items-center justify-center text-lg group-hover:bg-[var(--color-hhy-accent)]/20 transition-colors">
                     {s.icon}
                   </div>
-                  <span className="text-[10px] font-mono text-[var(--color-hhy-accent)] tracking-wider font-bold">{s.n}</span>
+                  <span className="text-[10px] font-mono text-white bg-[var(--color-hhy-dark)] px-2 py-0.5 rounded-md tracking-wider font-bold">{s.n}</span>
                 </div>
                 <h3 className="font-display text-lg font-bold text-[var(--color-hhy-charcoal)]">{s.t}</h3>
                 <p className="mt-3 text-sm text-[var(--color-hhy-muted-text)] leading-relaxed">{s.d}</p>
@@ -189,7 +189,7 @@ function PrivateLabelPage() {
                   <p className="mt-3 text-[var(--color-hhy-muted-text)] leading-relaxed">{cat.desc}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {cat.items.map(item => (
-                      <span key={item} className="px-3 py-1.5 text-xs font-medium rounded-full bg-[var(--color-hhy-accent)]/8 text-[var(--color-hhy-accent)] border border-[var(--color-hhy-accent)]/15">
+                      <span key={item} className="px-3 py-1.5 text-[11px] font-semibold rounded-full bg-[var(--color-hhy-dark)] text-white/90 border border-white/5 hover:border-[var(--color-hhy-accent)]/30 hover:shadow-[0_0_15px_rgba(1,208,145,0.1)] transition-all duration-300">
                         {item}
                       </span>
                     ))}
